@@ -313,14 +313,14 @@ export const makiItems: MenuItem[] = [
     name: "Sake Avokado",
     description: "Reis, Nori, Lachs, Avokado",
     price: "4.60€",
-    image: "?auto=compress&cs=tinysrgb&w=800"
+    image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'maki-5',
     name: "Sake Kappa",
     description: "Reis, Nori, Lachs, Gurke",
     price: "4.50€",
-    image: "?auto=compress&cs=tinysrgb&w=800"
+    image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'maki-6',
@@ -334,35 +334,35 @@ export const makiItems: MenuItem[] = [
     name: "Ebi Avokado",
     description: "Reis, Nori, gekochte Garnele, Avokado",
     price: "5.40€",
-    image: "?auto=compress&cs=tinysrgb&w=800"
+    image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'maki-8',
     name: "Tekka",
     description: "Reis, Nori, Thunfisch",
     price: "5.50€",
-    image: "  /product_photos/maki tekka.jpeg?auto=compress&cs=tinysrgb&w=800"
+    image: "/product_photos/maki tekka.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'maki-9',
     name: "Tekka Avokado",
     description: "Reis, Nori, Thunfisch, Avokado",
     price: "5.90€",
-    image: "?auto=compress&cs=tinysrgb&w=800"
+    image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'maki-10',
     name: "California",
     description: "Reis, Nori, Surimi, Avocado",
     price: "4.70€",
-    image: "?auto=compress&cs=tinysrgb&w=800"
+    image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'maki-11',
     name: "Chicken",
     description: "Reis, Nori, Hähnchen BBQ",
     price: "4.70€",
-    image: "?auto=compress&cs=tinysrgb&w=800"
+    image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
   },
 ];
 export const gunkansItems: MenuItem[] = [
@@ -445,21 +445,21 @@ export const insideOutRollsItems: MenuItem[] = [
     name: "Nakazu",
     description: "Reis, Nori, Garnelen-Tempura, Gurke, Lachs, Mayo",
     price: "14.00€",
-    image: " /product_photos/nakazu.jpeg?auto=compress&cs=tinysrgb&w=800"
+    image: "product_photos/nakazu.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'insideout-8',
     name: "California Lachs",
     description: "Reis, Nori, Lachs, Avocado, Gurke, Frischkäse, Tobiko-Kaviar",
     price: "9.80€",
-    image: " /product_photos/californ lachs.jpeg?auto=compress&cs=tinysrgb&w=800"
+    image: "/product_photos/californ lachs.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'insideout-9',
     name: "California Surimi",
     description: "Reis, Nori, Surimi, Mayo, Avokado, Frischkäse, Tobiko-Kaviar",
     price: "9.00€",
-    image: "?auto=compress&cs=tinysrgb&w=800"
+    image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'insideout-10',
@@ -509,7 +509,7 @@ export const insideOutRollsItems: MenuItem[] = [
     name: "Sake Hot",
     description: "Reis, Nori, Lachs, Mayo, Spicy-Sauce",
     price: "8.20€",
-    image: " ?auto=compress&cs=tinysrgb&w=800"
+    image: " /product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
   },
   // {
   //   id: 'insideout-17',
@@ -523,7 +523,7 @@ export const insideOutRollsItems: MenuItem[] = [
     name: "Philadelphia Avokado",
     description: "Reis, Nori, Lachs, Avokado, Frischkäse",
     price: "9.20€",
-    image: "?auto=compress&cs=tinysrgb&w=800"
+    image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'insideout-19',
@@ -544,7 +544,7 @@ export const insideOutRollsItems: MenuItem[] = [
     name: "California Avocadonito",
     description: "Reis, Nori, Avocado, Gurke, Frischkäse, Tobiko-Kaviar",
     price: "9.00€",
-    image: "?auto=compress&cs=tinysrgb&w=800"
+    image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
   },
 
 ];
