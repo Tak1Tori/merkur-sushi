@@ -168,7 +168,7 @@ function AppContent() {
                       </span>
                     </h2>
                     <p className="text-gray-400 text-lg leading-relaxed max-w-md">
-                      Entdecken Sie unsere exklusiven Sonderangebote, die mit den besten Zutaten und traditionellen japanischen Techniken zubereitet werden
+                      Wir haben eine große Auswahl an Sushi, die Ihnen gefallen werden, und jeder findet etwas nach seinem Geschmack. Wir sind immer für Sie da, damit Sie Ihre Lieblingsgerichte genießen können, ohne das Haus zu verlassen.
                     </p>
                   </div>
 
@@ -183,15 +183,15 @@ function AppContent() {
 
                       </div>
                     </div>
-                    {/* <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 bg-red-600/20 rounded-lg flex items-center justify-center">
                         <Clock className="w-5 h-5 text-red-400" />
                       </div>
                       <div>
-                        <p className="font-semibold">Fast Delivery</p>
-                        <p className="text-sm text-gray-400">30 minutes or less</p>
+                        <p className="font-semibold">schnelle Lieferung.</p>
+                        <p className="text-sm text-gray-400"> Frische Zutaten, Geschmacksvielfalt.</p>
                       </div>
-                    </div> */}
+                    </div>
                   </div>
                 </div>
 

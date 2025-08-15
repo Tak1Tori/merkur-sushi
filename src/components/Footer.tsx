@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-bold text-white mb-4">Kosmisches Vergnügen</h3>
-              <p className="text-gray-400 mb-2">Sie sind immer herzlich willkommen bei uns</p>
+              <p className="text-gray-400 mb-2">Da uns nicht nur der Geschmack, sondern auch die hohe Qualität der Speisen wichtig ist, verwenden wir ausschließlich hochwertige Produkte.</p>
               
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
