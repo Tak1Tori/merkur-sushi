@@ -541,7 +541,7 @@ export const insideOutRollsItems: MenuItem[] = [
   },
   {
     id: 'insideout-21',
-    name: "California Avocadonito",
+    name: "California Avocado",
     description: "Reis, Nori, Avocado, Gurke, Frischkäse, Tobiko-Kaviar",
     price: "9.00€",
     image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
