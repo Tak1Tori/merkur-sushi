@@ -459,7 +459,7 @@ export const insideOutRollsItems: MenuItem[] = [
     name: "California Surimi",
     description: "Reis, Nori, Surimi, Mayo, Gurke, Frischkäse, Tobiko-Kaviar",
     price: "9.00€",
-    image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
+    image: "public/product_photos/california_surimi.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'insideout-10',
