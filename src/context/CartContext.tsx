@@ -88,7 +88,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     if (subtotal >= 60) {
       promotions.push({
         id: 'minimum_order',
-        name: 'Заказ от €60',
+        name: 'Bestellwert ab 60 €',
         type: 'minimum_order',
         discount: 10,
         isActive: true,

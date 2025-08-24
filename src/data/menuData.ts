@@ -289,77 +289,77 @@ export const bowlsItems: MenuItem[] = [
 export const makiItems: MenuItem[] = [
   {
     id: 'maki-1',
-    name: "Avokado",
+    name: "Maki Avokado",
     description: "Reis, Nori, Avocado",
     price: "4.10€",
     image: "/product_photos/maki avocado.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'maki-2',
-    name: "Kappa",
+    name: "Maki Kappa",
     description: "Reis, Nori, Gurke, Sesam",
     price: "4.00€",
     image: "/product_photos/maki kappa.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'maki-3',
-    name: "Sake",
+    name: "Maki Sake",
     description: "Reis, Nori, Lachs",
     price: "4.40€",
     image: "/product_photos/maki sake.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'maki-4',
-    name: "Sake Avokado",
+    name: "Maki Sake Avokado",
     description: "Reis, Nori, Lachs, Avokado",
     price: "4.60€",
     image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'maki-5',
-    name: "Sake Kappa",
+    name: "Maki Sake Kappa",
     description: "Reis, Nori, Lachs, Gurke",
     price: "4.50€",
     image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'maki-6',
-    name: "Ebi",
+    name: "Maki Ebi",
     description: "Reis, Nori, gekochte Garnele",
     price: "5.00€",
     image: "/product_photos/maki ebi .jpeg?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'maki-7',
-    name: "Ebi Avokado",
+    name: "Maki Ebi Avokado",
     description: "Reis, Nori, gekochte Garnele, Avokado",
     price: "5.40€",
     image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'maki-8',
-    name: "Tekka",
+    name: "Maki Tekka",
     description: "Reis, Nori, Thunfisch",
     price: "5.50€",
     image: "/product_photos/maki tekka.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'maki-9',
-    name: "Tekka Avokado",
+    name: "Maki Tekka Avokado",
     description: "Reis, Nori, Thunfisch, Avokado",
     price: "5.90€",
     image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'maki-10',
-    name: "California",
+    name: "Maki California",
     description: "Reis, Nori, Surimi, Avocado",
     price: "4.70€",
     image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'maki-11',
-    name: "Chicken",
+    name: "Maki Chicken",
     description: "Reis, Nori, Hähnchen BBQ",
     price: "4.70€",
     image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
@@ -511,13 +511,13 @@ export const insideOutRollsItems: MenuItem[] = [
     price: "8.20€",
     image: " /product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
   },
-  // {
-  //   id: 'insideout-17',
-  //   name: "Unagi Hot",
-  //   description: "Reis, Nori, Aal, Salat, Gurke, Spicy-Sauce, Käsehut mit Zwiebeln",
-  //   price: "10.00€",
-  //   image: "?auto=compress&cs=tinysrgb&w=800"
-  // },
+  {
+    id: 'insideout-17',
+    name: "Garnelen spice",
+    description: "Reis, Nori, Garnele, Frischkäse, Gurken, Flambierter Lachs, Tobiko-Kaviar, Spice-Sauce, Teriyaki-Sause, Schnittlauch",
+    price: "14.50€",
+    image: "/product_photos/garnelen_spice.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
   {
     id: 'insideout-18',
     name: "Philadelphia Avokado",
