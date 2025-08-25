@@ -9,6 +9,7 @@ interface MenuItem {
   price: string;
   image?: string;
   category?: string;
+  recommended?: boolean; 
 }
 
 interface MenuSectionProps {
@@ -22,7 +23,6 @@ const sauceOptions = [
   { id: 'joghurt', name: 'Joghurt-Dressing', price: 0 },
   { id: 'balzamic', name: 'Balsamico-Dressing', price: 0 },
   { id: 'noSause', name: 'ohne Dressing', price: 0 },
-  
 ];
 
 const MenuSection: React.FC<MenuSectionProps> = ({ title, image, items }) => {
@@ -30,11 +30,10 @@ const MenuSection: React.FC<MenuSectionProps> = ({ title, image, items }) => {
   const [selectedSauces, setSelectedSauces] = useState<{[key: string]: string}>({});
   const [showSauceSelector, setShowSauceSelector] = useState<{[key: string]: boolean}>({});
 
-   const isBowlSection = title === 'Bowls';
+  const isBowlSection = title === 'Bowls';
 
   const handleAddToCart = (item: MenuItem) => {
-   
-   if (isBowlSection) {
+    if (isBowlSection) {
       const selectedSauce = selectedSauces[item.id];
       if (!selectedSauce) {
         setShowSauceSelector(prev => ({ ...prev, [item.id]: true }));
@@ -46,7 +45,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({ title, image, items }) => {
       const saucePrice = sauce ? sauce.price : 0;
       const totalPrice = parseFloat(item.price.replace('€', '')) + saucePrice;
    
-    addToCart({
+      addToCart({
         id: `${item.id}-${selectedSauce}`,
         name: `${item.name} + ${sauceName}`,
         price: `€${totalPrice.toFixed(2)}`,
@@ -68,6 +67,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({ title, image, items }) => {
     setSelectedSauces(prev => ({ ...prev, [itemId]: sauceId }));
     setShowSauceSelector(prev => ({ ...prev, [itemId]: false }));
   };
+
   return (
     <section className="py-16 px-6 border-t border-red-900/30">
       <div className="max-w-7xl mx-auto">
@@ -80,8 +80,19 @@ const MenuSection: React.FC<MenuSectionProps> = ({ title, image, items }) => {
           {items.map((item) => (
             <div
               key={item.id}
-              className=" backdrop-blur-sm border-2 border-red-600/30 rounded-xl p-6 hover:border-red-500/60 transition-all duration-300 hover:scale-105 group hover:shadow-red-700/20"
+              className="backdrop-blur-sm border-2 border-red-600/30 rounded-xl p-6 hover:border-red-500/60 transition-all duration-300 hover:scale-105 group hover:shadow-red-700/20 relative" // Добавляем relative
             >
+              {/* Бейдж рекомендации */}
+              {item.recommended && (
+                <div className="absolute -top-2 -left-2 z-10">
+                  <img 
+                    src="/special/wir_empfehlen___Отредактировано-removebg-preview.png" // Укажите правильный путь к изображению
+                    alt="Wir empfehlen"
+                    className="w-24 h-24" // Настройте размер по необходимости
+                  />
+                </div>
+              )}
+              
               {item.image && (
                 <div className="mb-4 overflow-hidden rounded-lg">
                   <img
@@ -101,7 +112,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({ title, image, items }) => {
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-xl font-bold text-red-400">{item.price}</span>
-                 <div className="relative">
+                  <div className="relative">
                     {isBowlSection && showSauceSelector[item.id] && (
                       <div className="absolute bottom-12 right-0 bg-black border-2 border-red-600/50 rounded-lg p-3 min-w-48 z-20 shadow-2xl">
                         <h4 className="text-sm font-bold text-red-700 mb-2">Soße auswählen:</h4>
@@ -154,7 +165,5 @@ const MenuSection: React.FC<MenuSectionProps> = ({ title, image, items }) => {
     </section>
   );
 };
-
-
 
 export default MenuSection;

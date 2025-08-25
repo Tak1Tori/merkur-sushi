@@ -4,6 +4,7 @@ export interface MenuItem {
   description: string;
   price: string;
   image: string;
+  recommended?: boolean;
 }
 export const MerkurBoxes: MenuItem[] = [
   {
@@ -98,7 +99,8 @@ export const merkurSpecial: MenuItem[] = [
     name: "Sushi Burger Lachs",
     description: "Reis, Nori, Lachs, Avocado, Teriyaki Sauce, Frischkäse, Spicy Sauce, Tobiko Kaviar",
     price: "15.00€",
-    image: "/product_photos/burger lach.jpeg?auto=compress&cs=tinysrgb&w=800"
+    image: "/product_photos/burger lach.jpeg?auto=compress&cs=tinysrgb&w=800",
+    recommended: true, 
   },
   {
     id: 'special-2',
@@ -126,7 +128,8 @@ export const merkurSpecial: MenuItem[] = [
     name: "Sushi Sandwich Ceasar",
     description: "Hähnchenbrust, Reis, Nori, Salat, Cheddarkäse, Tomaten, Ceasar-Sauce, Parmesan",
     price: "13.50€",
-    image: "/product_photos/caesar sandwich.jpeg?auto=compress&cs=tinysrgb&w=800"
+    image: "/product_photos/caesar sandwich.jpeg?auto=compress&cs=tinysrgb&w=800",
+    recommended: true, 
   },
 
 ];
@@ -274,7 +277,8 @@ export const bowlsItems: MenuItem[] = [
     name: "Bowl Chicken ",
     description: "große Reisbowl mit crispy Chicken, Avocado, Mais, Salatmix, Edamamebohnen, Möhrenstreifen",
     price: "13.00€",
-    image: "/product_photos/chicken bowl.jpeg?auto=compress&cs=tinysrgb&w=800"
+    image: "/product_photos/chicken bowl.jpeg?auto=compress&cs=tinysrgb&w=800",
+    recommended: true, 
   },
   {
     id: 'bowls-4',
@@ -410,7 +414,8 @@ export const insideOutRollsItems: MenuItem[] = [
     name: "Philadelphia Surimi",
     description: "Reis, Nori, Surimi, Frischkäse, Lachs",
     price: "9.20€",
-    image: "product_photos/phila surimi.jpeg?auto=compress&cs=tinysrgb&w=800"
+    image: "product_photos/phila surimi.jpeg?auto=compress&cs=tinysrgb&w=800",
+    recommended: true, 
   },
   {
     id: 'insideout-3',
@@ -452,7 +457,8 @@ export const insideOutRollsItems: MenuItem[] = [
     name: "California Lachs",
     description: "Reis, Nori, Lachs, Avocado, Gurke, Frischkäse, Tobiko-Kaviar",
     price: "9.80€",
-    image: "/product_photos/californ lachs.jpeg?auto=compress&cs=tinysrgb&w=800"
+    image: "/product_photos/californ lachs.jpeg?auto=compress&cs=tinysrgb&w=800",
+    recommended: true, 
   },
   {
     id: 'insideout-9',
@@ -466,7 +472,8 @@ export const insideOutRollsItems: MenuItem[] = [
     name: "Akari",
     description: "Reis, Nori, Lachs, Aal, Gurke, Frischkäse, Tobiko-Kaviar, Omelett Tomago",
     price: "13.80€",
-    image: " /product_photos/akari.jpeg?auto=compress&cs=tinysrgb&w=800"
+    image: " /product_photos/akari.jpeg?auto=compress&cs=tinysrgb&w=800",
+    
   },
   {
     id: 'insideout-11',
@@ -480,7 +487,8 @@ export const insideOutRollsItems: MenuItem[] = [
     name: "Space Hot",
     description: "Reis, Nori, Lachs, Tomaten, Avocado, geräucherter Schinken, Frischkäse, Käsehut mit Blauschimmelkäse",
     price: "10.00€",
-    image: " /product_photos/space hot.jpeg?auto=compress&cs=tinysrgb&w=800"
+    image: " /product_photos/space hot.jpeg?auto=compress&cs=tinysrgb&w=800",
+    recommended: true, 
   },
   {
     id: 'insideout-13',
@@ -516,7 +524,8 @@ export const insideOutRollsItems: MenuItem[] = [
     name: "Garnelen spice",
     description: "Reis, Nori, Garnele, Frischkäse, Gurken, Flambierter Lachs, Tobiko-Kaviar, Spice-Sauce, Teriyaki-Sause, Schnittlauch",
     price: "14.50€",
-    image: "/product_photos/garnelen_spice.jpeg?auto=compress&cs=tinysrgb&w=800"
+    image: "/product_photos/garnelen_spice.jpeg?auto=compress&cs=tinysrgb&w=800",
+    recommended: true, 
   },
   {
     id: 'insideout-18',
@@ -600,7 +609,8 @@ export const tempuraItems: MenuItem[] = [
     name: "Tempura Chicken",
     description: "Reis, Nori, Chicken BBQ, geräucherter Schinken, Gurke, Frischkäse, Unagi-Sauce, Spicy-Sauce",
     price: "12.00€",
-    image: " /product_photos/tempura chicken.jpeg?auto=compress&cs=tinysrgb&w=800"
+    image: " /product_photos/tempura chicken.jpeg?auto=compress&cs=tinysrgb&w=800",
+    recommended: true, 
   },
   {
     id: 'tempura-4',
