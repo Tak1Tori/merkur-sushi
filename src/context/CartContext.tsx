@@ -76,7 +76,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     if (isWeekdayLunchTime()) {
       promotions.push({
         id: 'weekday_lunch',
-        name: 'Будние дни 12:00-15:00',
+        name: 'Wochentags 12:00-15:00',
         type: 'weekday_lunch',
         discount: 10,
         isActive: true,
