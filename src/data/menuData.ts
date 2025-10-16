@@ -295,7 +295,7 @@ export const makiItems: MenuItem[] = [
     id: 'maki-1',
     name: "Maki Avokado",
     description: "Reis, Nori, Avocado",
-    price: "4.10€",
+    price: "4.00€",
     image: "/product_photos/maki avocado.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
   {
@@ -330,35 +330,35 @@ export const makiItems: MenuItem[] = [
     id: 'maki-6',
     name: "Maki Ebi",
     description: "Reis, Nori, gekochte Garnele",
-    price: "5.00€",
+    price: "4.70€",
     image: "/product_photos/maki ebi .jpeg?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'maki-7',
     name: "Maki Ebi Avokado",
     description: "Reis, Nori, gekochte Garnele, Avokado",
-    price: "5.40€",
+    price: "4.80€",
     image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'maki-8',
     name: "Maki Tekka",
     description: "Reis, Nori, Thunfisch",
-    price: "5.50€",
+    price: "5.20€",
     image: "/product_photos/maki tekka.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'maki-9',
     name: "Maki Tekka Avokado",
     description: "Reis, Nori, Thunfisch, Avokado",
-    price: "5.90€",
+    price: "5.60€",
     image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'maki-10',
     name: "Maki California",
     description: "Reis, Nori, Surimi, Avocado",
-    price: "4.70€",
+    price: "4.20€",
     image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
   },
   {
@@ -594,14 +594,14 @@ export const tempuraItems: MenuItem[] = [
     id: 'tempura-1',
     name: "Tempura Arischi",
     description: "Reis, Nori, Garnelen, Gurke, Frischkäse, Aal, Unagi-Sauce",
-    price: "12.50€",
+    price: "13,90€",
     image: " /product_photos/temura arichi.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'tempura-2',
     name: "Tempura Tekka",
     description: "Reis, Nori, Thunfisch, Salat, Mayo,Unagi-Sauce",
-    price: "12.00€",
+    price: "14,90€",
     image: " /product_photos/tempura tekka.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
   {
@@ -616,14 +616,14 @@ export const tempuraItems: MenuItem[] = [
     id: 'tempura-4',
     name: "Tempura Vulkan",
     description: "Reis, Nori, Jalapeños, Gurke, Frischkäse, Omelett Tomago, Unagi-Sauce",
-    price: "9.20€",
+    price: "10,90€",
     image: " /product_photos/tempura vulkan.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
   {
     id: 'tempura-5',
     name: "Tempura Lachs",
     description: "Reis, Nori, Lachs, Salat, Frischkäse, Unagi-Sauce",
-    price: "10.90€",
+    price: "11,90€",
     image: " /product_photos/tempura lachs.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
   {
