@@ -26,7 +26,7 @@ const sauceOptions = [
 ];
 
 const MenuSection: React.FC<MenuSectionProps> = ({ title, image, items }) => {
-  const { addToCart } = useCart();
+  const { addToCart, setIsCartOpen } = useCart();
   const [selectedSauces, setSelectedSauces] = useState<{[key: string]: string}>({});
   const [showSauceSelector, setShowSauceSelector] = useState<{[key: string]: boolean}>({});
 
@@ -39,19 +39,19 @@ const MenuSection: React.FC<MenuSectionProps> = ({ title, image, items }) => {
         setShowSauceSelector(prev => ({ ...prev, [item.id]: true }));
         return;
       }
-      
+
       const sauce = sauceOptions.find(s => s.id === selectedSauce);
       const sauceName = sauce ? sauce.name : '';
       const saucePrice = sauce ? sauce.price : 0;
       const totalPrice = parseFloat(item.price.replace('€', '')) + saucePrice;
-   
+
       addToCart({
         id: `${item.id}-${selectedSauce}`,
         name: `${item.name} + ${sauceName}`,
         price: `€${totalPrice.toFixed(2)}`,
         description: item.description
       });
-      
+
       setShowSauceSelector(prev => ({ ...prev, [item.id]: false }));
     } else {
       addToCart({
@@ -60,6 +60,11 @@ const MenuSection: React.FC<MenuSectionProps> = ({ title, image, items }) => {
         price: item.price,
         description: item.description
       });
+    }
+
+    // Open cart on desktop (screen width >= 768px)
+    if (window.innerWidth >= 768) {
+      setIsCartOpen(true);
     }
   };
 

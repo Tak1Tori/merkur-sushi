@@ -25,8 +25,7 @@ import CateringSection from './components/CateringSection';
 
 function AppContent() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isCartOpen, setIsCartOpen] = useState(false);
-  const { cartItems } = useCart();
+  const { cartItems, isCartOpen, setIsCartOpen } = useCart();
 
   const specialOffers = [
     {
@@ -92,21 +91,11 @@ function AppContent() {
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
 
-      {/* Fixed Cart Button */}
-      <button
-        onClick={() => setIsCartOpen(true)}
-        className="fixed bottom-6 right-6 z-40 w-16 h-16 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-2xl border-2 border-red-500/50"
-      >
-        <ShoppingCart className="w-7 h-7 text-white" />
-        {totalItems > 0 && (
-          <span className="absolute -top-2 -right-2 bg-orange-500 text-white text-sm rounded-full w-6 h-6 flex items-center justify-center font-bold border-2 border-white">
-            {totalItems}
-          </span>
-        )}
-      </button>
 
-      {/* Content */}
-      <div className="relative z-10">
+      {/* Content - shift left when cart is open on desktop */}
+      <div className={`relative z-10 transition-all duration-300 ${
+        isCartOpen ? 'md:mr-96' : ''
+      }`}>
         {/* Header Section with Header Background */}
         <div
           className="relative bg-cover bg-center bg-no-repeat"
@@ -306,13 +295,12 @@ function AppContent() {
           {/* Menu Sections */}
           <div id="menu" className="relative z-10">
 
-            <div id="aktionen">
+            {/* <div id="aktionen">
               <ComingSoonBanner
                 title="Aktionen"
 
-                message="Wir bereiten neue heiße Angebote und Aktionen für Sie vor"
               />
-            </div>
+            </div> */}
 
             {/* <div id="aktionen">
               <MenuSection title="Aktionen" items={aktionenItems} />
@@ -345,12 +333,12 @@ function AppContent() {
               <MenuSection title="Inside out Rolls (8 St.)" items={insideOutRollsItems} />
             </div>
 
-            <div id="spring-rolls">
+            {/* <div id="spring-rolls">
               <ComingSoonBanner
                 title="Spring rolls"
                 message="Wir arbeiten an neuen Rezepten für Frühlingsrollen"
               />
-            </div>
+            </div> */}
 
 
 
@@ -392,7 +380,11 @@ function AppContent() {
       </div>
 
       {/* Cart Sidebar */}
-      <Cart isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
+      <Cart
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+        onOpen={() => setIsCartOpen(true)}
+      />
     </div>
   );
 }

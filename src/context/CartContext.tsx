@@ -28,6 +28,8 @@ interface CartContextType {
   getDiscountAmount: () => number;
   isMinimumOrderMet: () => boolean;
   getMinimumOrderAmount: () => number;
+  isCartOpen: boolean;
+  setIsCartOpen: (isOpen: boolean) => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -46,6 +48,8 @@ interface CartProviderProps {
 
 export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [hasAddedItem, setHasAddedItem] = useState(false);
 
   const MINIMUM_ORDER_AMOUNT = 20;
 
@@ -125,6 +129,12 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
       }
       return [...prevItems, { ...item, quantity: 1 }];
     });
+
+    // Open cart on first item add
+    if (!hasAddedItem) {
+      setHasAddedItem(true);
+      setIsCartOpen(true);
+    }
   };
 
   const removeFromCart = (id: string) => {
@@ -172,7 +182,9 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
       getActivePromotions,
       getDiscountAmount,
       isMinimumOrderMet,
-      getMinimumOrderAmount
+      getMinimumOrderAmount,
+      isCartOpen,
+      setIsCartOpen
     }}>
       {children}
     </CartContext.Provider>
