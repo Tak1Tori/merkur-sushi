@@ -213,13 +213,13 @@ export const nigiriOnigiriItems: MenuItem[] = [
     price: "4.50€",
     image: "/product_photos/unagi.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
-  {
-    id: 'nigiri-6',
-    name: "Maguro",
-    description: "Reis, Nori, Thunfisch, Sesam",
-    price: "4.50€",
-    image: "/product_photos/maguro.jpeg?auto=compress&cs=tinysrgb&w=800"
-  },
+  // {
+  //   id: 'nigiri-6',
+  //   name: "Maguro",
+  //   description: "Reis, Nori, Thunfisch, Sesam",
+  //   price: "4.50€",
+  //   image: "/product_photos/maguro.jpeg?auto=compress&cs=tinysrgb&w=800"
+  // },
   {
     id: 'nigiri-7',
     name: "Surimi",
@@ -482,43 +482,43 @@ export const insideOutRollsItems: MenuItem[] = [
     price: "14.50€",
     image: " /product_photos/tokio.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
-  {
-    id: 'insideout-12',
-    name: "Space Hot",
-    description: "Reis, Nori, Lachs, Tomaten, Avocado, geräucherter Schinken, Frischkäse, Käsehut mit Blauschimmelkäse",
-    price: "10.00€",
-    image: " /product_photos/space hot.jpeg?auto=compress&cs=tinysrgb&w=800",
-    recommended: true, 
-  },
-  {
-    id: 'insideout-13',
-    name: "Tasai Hot",
-    description: "Reis, Nori, Bacon, Salat, Teriyaki-Sauce, Sesam, Käsehut mit Tobiko-Kaviar",
-    price: "8.60€",
-    image: " /product_photos/tasai hot.jpeg?auto=compress&cs=tinysrgb&w=800"
-  },
-  {
-    id: 'insideout-14',
-    name: "Bacon Hot",
-    description: "Reis, Nori, Chicken BBQ, Bacon, Tomaten, Frischkäse, Käsehut mit Tobiko-Kaviar",
-    price: "9.00€",
-    image: " /product_photos/bacon hot.jpeg?auto=compress&cs=tinysrgb&w=800"
-  },
-  {
-    id: 'insideout-15',
-    name: "Philadelphia Hot",
-    description: "Reis, Nori, Lachs, Frischkäse, Käsehut mit Tobiko-Kaviar",
-    price: "9.00€",
-    image: " /product_photos/phila hot.jpeg?auto=compress&cs=tinysrgb&w=800"
-  },
+  // {
+  //   id: 'insideout-12',
+  //   name: "Space Hot",
+  //   description: "Reis, Nori, Lachs, Tomaten, Avocado, geräucherter Schinken, Frischkäse, Käsehut mit Blauschimmelkäse",
+  //   price: "10.00€",
+  //   image: " /product_photos/space hot.jpeg?auto=compress&cs=tinysrgb&w=800",
+  //   recommended: true, 
+  // },
+  // {
+  //   id: 'insideout-13',
+  //   name: "Tasai Hot",
+  //   description: "Reis, Nori, Bacon, Salat, Teriyaki-Sauce, Sesam, Käsehut mit Tobiko-Kaviar",
+  //   price: "8.60€",
+  //   image: " /product_photos/tasai hot.jpeg?auto=compress&cs=tinysrgb&w=800"
+  // },
+  // {
+  //   id: 'insideout-14',
+  //   name: "Bacon Hot",
+  //   description: "Reis, Nori, Chicken BBQ, Bacon, Tomaten, Frischkäse, Käsehut mit Tobiko-Kaviar",
+  //   price: "9.00€",
+  //   image: " /product_photos/bacon hot.jpeg?auto=compress&cs=tinysrgb&w=800"
+  // },
+  // {
+  //   id: 'insideout-15',
+  //   name: "Philadelphia Hot",
+  //   description: "Reis, Nori, Lachs, Frischkäse, Käsehut mit Tobiko-Kaviar",
+  //   price: "9.00€",
+  //   image: " /product_photos/phila hot.jpeg?auto=compress&cs=tinysrgb&w=800"
+  // },
 
-  {
-    id: 'insideout-16',
-    name: "Sake Hot",
-    description: "Reis, Nori, Lachs, Mayo, Spicy-Sauce",
-    price: "8.20€",
-    image: " /product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
-  },
+  // {
+  //   id: 'insideout-16',
+  //   name: "Sake Hot",
+  //   description: "Reis, Nori, Lachs, Mayo, Spicy-Sauce",
+  //   price: "8.20€",
+  //   image: " /product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
+  // },
   {
     id: 'insideout-17',
     name: "Garnelen spice",
@@ -541,13 +541,13 @@ export const insideOutRollsItems: MenuItem[] = [
     price: "13.00€",
     image: "/product_photos/bonito.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
-  {
-    id: 'insideout-20',
-    name: "Cheddar Roll",
-    description: "Reis, Nori, Aal, Getrocknete Tomate, Gurke, Frischkäse, Cheddar, Unagi Sauce, Sesam",
-    price: "12.00€",
-    image: "/product_photos/Cheddar Roll.jpeg?auto=compress&cs=tinysrgb&w=800"
-  },
+  // {
+  //   id: 'insideout-20',
+  //   name: "Cheddar Roll",
+  //   description: "Reis, Nori, Aal, Getrocknete Tomate, Gurke, Frischkäse, Cheddar, Unagi Sauce, Sesam",
+  //   price: "12.00€",
+  //   image: "/product_photos/Cheddar Roll.jpeg?auto=compress&cs=tinysrgb&w=800"
+  // },
   {
     id: 'insideout-21',
     name: "California Avocado",
