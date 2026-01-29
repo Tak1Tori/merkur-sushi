@@ -143,14 +143,14 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   };
 
   const applyPromoCode = (code: string): boolean => {
-    if (code.toLowerCase().trim() !== 'maki') return false;
+    if (code.toLowerCase().trim() !== 'nikitos') return false;
 
     const alreadyAdded = cartItems.some(i => i.id === FREE_SUSHI_ITEM.id);
     if (!alreadyAdded) {
       addToCart(FREE_SUSHI_ITEM);
     }
 
-    setPromoCode('maki');
+    setPromoCode('nikitos');
     return true;
   };
 
