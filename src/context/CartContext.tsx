@@ -103,7 +103,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
       });
     }
 
-    if (promoCode === 'Nikitos') {
+    if (promoCode === 'maki') {
       promotions.push({
         id: 'promo_maki',
         name: 'Promo-Code MAKI',
@@ -143,14 +143,14 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   };
 
   const applyPromoCode = (code: string): boolean => {
-    if (code.toLowerCase().trim() !== 'nikitos') return false;
+    if (code.toLowerCase().trim() !== 'maki') return false;
 
     const alreadyAdded = cartItems.some(i => i.id === FREE_SUSHI_ITEM.id);
     if (!alreadyAdded) {
       addToCart(FREE_SUSHI_ITEM);
     }
 
-    setPromoCode('nikitos');
+    setPromoCode('maki');
     return true;
   };
 
