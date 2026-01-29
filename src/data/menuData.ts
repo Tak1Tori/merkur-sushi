@@ -84,7 +84,7 @@ export const MerkurBoxes: MenuItem[] = [
     price: "37.00€",
     image: ""
   },
-  
+
   {
     id: 'box-12',
     name: "Menü XL",
@@ -100,7 +100,7 @@ export const merkurSpecial: MenuItem[] = [
     description: "Reis, Nori, Lachs, Avocado, Teriyaki Sauce, Frischkäse, Spicy Sauce, Tobiko Kaviar",
     price: "15.00€",
     image: "/product_photos/burger lach.jpeg?auto=compress&cs=tinysrgb&w=800",
-    recommended: true, 
+    recommended: true,
   },
   {
     id: 'special-2',
@@ -129,7 +129,7 @@ export const merkurSpecial: MenuItem[] = [
     description: "Hähnchenbrust, Reis, Nori, Salat, Cheddarkäse, Tomaten, Ceasar-Sauce, Parmesan",
     price: "13.50€",
     image: "/product_photos/caesar sandwich.jpeg?auto=compress&cs=tinysrgb&w=800",
-    recommended: true, 
+    recommended: true,
   },
 
 ];
@@ -250,7 +250,7 @@ export const nigiriOnigiriItems: MenuItem[] = [
   },
   {
     id: 'nigiri-11',
-    name: ">Onigiri Chicken",
+    name: "Onigiri Chicken",
     description: "Reis, Nori, Chicken, Sweet Sauce",
     price: "4.80€",
     image: "/product_photos/chicken_onigiri.jpeg?auto=compress&cs=tinysrgb&w=800"
@@ -278,7 +278,7 @@ export const bowlsItems: MenuItem[] = [
     description: "große Reisbowl mit crispy Chicken, Avocado, Mais, Salatmix, Edamamebohnen, Möhrenstreifen",
     price: "13.00€",
     image: "/product_photos/chicken bowl.jpeg?auto=compress&cs=tinysrgb&w=800",
-    recommended: true, 
+    recommended: true,
   },
   {
     id: 'bowls-4',
@@ -317,14 +317,14 @@ export const makiItems: MenuItem[] = [
     name: "Maki Sake Avokado",
     description: "Reis, Nori, Lachs, Avokado",
     price: "4.60€",
-    image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
+    image: "/product_photos/Maki Sake Avokado.jpeg"
   },
   {
     id: 'maki-5',
     name: "Maki Sake Kappa",
     description: "Reis, Nori, Lachs, Gurke",
     price: "4.50€",
-    image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
+    image: "/product_photos/Maki Sake Kappa.jpeg"
   },
   {
     id: 'maki-6',
@@ -359,14 +359,14 @@ export const makiItems: MenuItem[] = [
     name: "Maki California",
     description: "Reis, Nori, Surimi, Avocado",
     price: "4.20€",
-    image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
+    image: "/product_photos/Maki California.jpeg"
   },
   {
     id: 'maki-11',
     name: "Maki Chicken",
     description: "Reis, Nori, Hähnchen BBQ",
     price: "4.70€",
-    image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
+    image: "/product_photos/Maki Chicken.jpeg"
   },
 ];
 export const gunkansItems: MenuItem[] = [
@@ -415,7 +415,7 @@ export const insideOutRollsItems: MenuItem[] = [
     description: "Reis, Nori, Surimi, Frischkäse, Lachs",
     price: "9.20€",
     image: "product_photos/phila surimi.jpeg?auto=compress&cs=tinysrgb&w=800",
-    recommended: true, 
+    recommended: true,
   },
   {
     id: 'insideout-3',
@@ -458,7 +458,7 @@ export const insideOutRollsItems: MenuItem[] = [
     description: "Reis, Nori, Lachs, Avocado, Gurke, Frischkäse, Tobiko-Kaviar",
     price: "9.80€",
     image: "/product_photos/californ lachs.jpeg?auto=compress&cs=tinysrgb&w=800",
-    recommended: true, 
+    recommended: true,
   },
   {
     id: 'insideout-9',
@@ -473,7 +473,7 @@ export const insideOutRollsItems: MenuItem[] = [
     description: "Reis, Nori, Lachs, Aal, Gurke, Frischkäse, Tobiko-Kaviar, Omelett Tomago",
     price: "13.80€",
     image: " /product_photos/akari.jpeg?auto=compress&cs=tinysrgb&w=800",
-    
+
   },
   {
     id: 'insideout-11',
@@ -525,14 +525,14 @@ export const insideOutRollsItems: MenuItem[] = [
     description: "Reis, Nori, Garnele, Frischkäse, Gurken, Flambierter Lachs, Tobiko-Kaviar, Spice-Sauce, Teriyaki-Sause, Schnittlauch",
     price: "14.50€",
     image: "/product_photos/garnelen_spice.jpeg?auto=compress&cs=tinysrgb&w=800",
-    recommended: true, 
+    recommended: true,
   },
   {
     id: 'insideout-18',
     name: "Philadelphia Avokado",
     description: "Reis, Nori, Lachs, Avokado, Frischkäse",
     price: "9.20€",
-    image: "/product_photos/notReadyPhoto.png?auto=compress&cs=tinysrgb&w=800"
+    image: "/product_photos/Philadelphia Avocado.jpeg"
   },
   {
     id: 'insideout-19',
@@ -610,7 +610,7 @@ export const tempuraItems: MenuItem[] = [
     description: "Reis, Nori, Chicken BBQ, geräucherter Schinken, Gurke, Frischkäse, Unagi-Sauce, Spicy-Sauce",
     price: "12.00€",
     image: " /product_photos/tempura chicken.jpeg?auto=compress&cs=tinysrgb&w=800",
-    recommended: true, 
+    recommended: true,
   },
   {
     id: 'tempura-4',
@@ -724,8 +724,46 @@ export const dessertsItems: MenuItem[] = [
     description: "rote Bohne 210g ( 6 Stück)",
     price: "9.50€",
     image: "/product_photos/mochi redBean.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    id: 'desert-5',
+    name: "Spring Rolls gefühlt mit Bananen",
+    description: "6 Stück leckere Spring Rolls gefühlt mit Bananen und dazu eine Karamell-Sauce: Bananen, Zimt, Frühlingsrollenteig, Karamell-Sauce",
+    price: "5.80€",
+    image: "/product_photos/Spring_Rolls gefühlt mit Bananen.jpeg"
   }
 ];
+export const VorspeisenItems: MenuItem[] = [
+  {
+    id: "Vorspeisen-1",
+    name: "Frühlingsrollen",
+    description: "6 St vegetarisch, mit Sweet Chili Sauce",
+    price: "3.40€",
+    image: "/product_photos/Frühlingsrolle.jpeg"
+  },
+  {
+    id: "Vorspeisen-2",
+    name: "Frühlingsrollen",
+    description: "12 St vegetarisch, mit Sweet Chili Sauce",
+    price: "5.90€",
+    image: "/product_photos/Frühlingsrolle.jpeg"
+  },
+  {
+    id: "Vorspeisen-3",
+    name: "Dumpling mit Shrimpfüllung",
+    description: "6 Stück leckere Dumpling mit Shrimpfüllung und eine Teriyaki Sauce",
+    price: "7.00€",
+    image: "/product_photos/Dumpling mit Schrimpfphlung.jpeg"
+  },
+  {
+    id: "Vorspeisen-4",
+    name: "Dumpling mit Gemüse",
+    description: "6 Stück Dumplings mit Gemüse und der Sauce Sweet Chili",
+    price: "5.40€",
+    image: "/product_photos/Dumpling_mit Gemüse.jpeg"
+  },
+  
+]
 
 export const getrankeItems: MenuItem[] = [
   {

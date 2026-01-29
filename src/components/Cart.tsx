@@ -8,6 +8,9 @@ interface CartProps {
   onOpen: () => void;
 }
 
+
+
+
 const Cart: React.FC<CartProps> = ({ isOpen, onClose, onOpen }) => {
   const {
     cartItems,
@@ -21,6 +24,7 @@ const Cart: React.FC<CartProps> = ({ isOpen, onClose, onOpen }) => {
     isMinimumOrderMet,
     getMinimumOrderAmount
   } = useCart();
+  const { applyPromoCode } = useCart();
 
   const handleOrderNow = () => {
     if (cartItems.length === 0) return;
@@ -174,15 +178,32 @@ const Cart: React.FC<CartProps> = ({ isOpen, onClose, onOpen }) => {
               )}
 
               <div className="space-y-2">
+                <div className="mb-3">
+                  <input
+                    type="text"
+                    placeholder="Promo-Code eingeben"
+                    className="w-full px-3 py-2 rounded bg-gray-800 text-white text-sm"
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        const ok = applyPromoCode((e.target as HTMLInputElement).value);
+                        if (!ok) alert('Ungültiger Promo-Code');
+                      }
+                    }}
+                  />
+                </div>
+
                 <button
                   onClick={handleOrderNow}
                   disabled={!minimumOrderMet}
                   className={`w-full font-bold py-3 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2 shadow-lg ${minimumOrderMet
-                      ? 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white cursor-pointer'
-                      : 'bg-gray-600 text-gray-400 cursor-not-allowed'
+                    ? 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white cursor-pointer'
+                    : 'bg-gray-600 text-gray-400 cursor-not-allowed'
                     }`}
                 >
                   <MessageCircle className="w-5 h-5" />
+
+
+
                   <span>{minimumOrderMet ? 'Jetzt bestellen' : `Mindestbestellwert €${minimumAmount}`}</span>
                 </button>
                 <button
@@ -313,12 +334,29 @@ const Cart: React.FC<CartProps> = ({ isOpen, onClose, onOpen }) => {
                   </div>
                 </div>
 
+
+                <div className="mb-2">
+                  <input
+                    type="text"
+                    placeholder="Promo-Code"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-800 text-white text-base focus:outline-none focus:ring-2 focus:ring-green-500"
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        const ok = applyPromoCode((e.target as HTMLInputElement).value);
+                        if (!ok) {
+                          alert('Ungültiger Promo-Code');
+                        }
+                      }
+                    }}
+                  />
+                </div>
+
                 <button
                   onClick={handleOrderNow}
                   disabled={!minimumOrderMet}
                   className={`w-full font-bold py-4 px-4 rounded-lg transition-colors flex items-center justify-center space-x-3 shadow-lg text-lg ${minimumOrderMet
-                      ? 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white cursor-pointer'
-                      : 'bg-gray-600 text-gray-400 cursor-not-allowed'
+                    ? 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white cursor-pointer'
+                    : 'bg-gray-600 text-gray-400 cursor-not-allowed'
                     }`}
                 >
                   <MessageCircle className="w-6 h-6" />

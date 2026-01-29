@@ -11,11 +11,12 @@ export interface CartItem {
 export interface Promotion {
   id: string;
   name: string;
-  type: 'weekday_lunch' | 'minimum_order';
+  type: 'weekday_lunch' | 'minimum_order' | 'promo_code';
   discount: number;
   isActive: boolean;
   description: string;
-} 
+}
+
 interface CartContextType {
   cartItems: CartItem[];
   addToCart: (item: Omit<CartItem, 'quantity'>) => void;
@@ -30,6 +31,7 @@ interface CartContextType {
   getMinimumOrderAmount: () => number;
   isCartOpen: boolean;
   setIsCartOpen: (isOpen: boolean) => void;
+  applyPromoCode: (code: string) => boolean;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -50,33 +52,35 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [hasAddedItem, setHasAddedItem] = useState(false);
+  const [promoCode, setPromoCode] = useState<string | null>(null);
 
   const MINIMUM_ORDER_AMOUNT = 20;
 
-  // Check if it's weekday lunch time (Monday-Friday, 12:00-15:00)
+  const FREE_SUSHI_ITEM: Omit<CartItem, 'quantity'> = {
+    id: 'free-maki',
+    name: 'Maki Sake Kappa',
+    price: '0€',
+    description: '🎁 Gratis nach Promo-Code'
+  };
+
   const isWeekdayLunchTime = (): boolean => {
     const now = new Date();
-    const day = now.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+    const day = now.getDay();
     const hour = now.getHours();
-    
-    // Monday to Friday (1-5) and between 12:00-15:00
     return day >= 1 && day <= 5 && hour >= 12 && hour < 15;
   };
 
-  // Get subtotal (before discounts)
   const getSubtotal = (): number => {
     return cartItems.reduce((total, item) => {
       const price = parseFloat(item.price.replace('€', '').replace(',', '.'));
-      return total + (price * item.quantity);
+      return total + price * item.quantity;
     }, 0);
   };
 
-  // Get active promotions
   const getActivePromotions = (): Promotion[] => {
     const promotions: Promotion[] = [];
     const subtotal = getSubtotal();
 
-    // Weekday lunch promotion (10% off)
     if (isWeekdayLunchTime()) {
       promotions.push({
         id: 'weekday_lunch',
@@ -88,7 +92,6 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
       });
     }
 
-    // Minimum order promotion (10% off orders €60+)
     if (subtotal >= 60) {
       promotions.push({
         id: 'minimum_order',
@@ -100,45 +103,59 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
       });
     }
 
+    if (promoCode === 'maki') {
+      promotions.push({
+        id: 'promo_maki',
+        name: 'Promo-Code MAKI',
+        type: 'promo_code',
+        discount: 0,
+        isActive: true,
+        description: 'Gratis Maki Sake Kappa zum Auftrag 🎁'
+      });
+    }
+
     return promotions;
   };
 
-  // Calculate discount amount
   const getDiscountAmount = (): number => {
     const activePromotions = getActivePromotions();
     const subtotal = getSubtotal();
-    
     if (activePromotions.length === 0) return 0;
-    
-    // Apply the best available discount (max 10% for now)
-    // If both promotions are active, still apply only 10% (not cumulative)
     const maxDiscount = Math.max(...activePromotions.map(p => p.discount));
     return (subtotal * maxDiscount) / 100;
   };
 
-  // Get final total price (after discounts)
   const addToCart = (item: Omit<CartItem, 'quantity'>) => {
-    setCartItems(prevItems => {
-      const existingItem = prevItems.find(cartItem => cartItem.id === item.id);
-      if (existingItem) {
-        return prevItems.map(cartItem =>
-          cartItem.id === item.id
-            ? { ...cartItem, quantity: cartItem.quantity + 1 }
-            : cartItem
+    setCartItems(prev => {
+      const existing = prev.find(i => i.id === item.id);
+      if (existing) {
+        return prev.map(i =>
+          i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
         );
       }
-      return [...prevItems, { ...item, quantity: 1 }];
+      return [...prev, { ...item, quantity: 1 }];
     });
 
-    // Open cart on first item add
     if (!hasAddedItem) {
       setHasAddedItem(true);
       setIsCartOpen(true);
     }
   };
 
+  const applyPromoCode = (code: string): boolean => {
+    if (code.toLowerCase().trim() !== 'maki') return false;
+
+    const alreadyAdded = cartItems.some(i => i.id === FREE_SUSHI_ITEM.id);
+    if (!alreadyAdded) {
+      addToCart(FREE_SUSHI_ITEM);
+    }
+
+    setPromoCode('maki');
+    return true;
+  };
+
   const removeFromCart = (id: string) => {
-    setCartItems(prevItems => prevItems.filter(item => item.id !== id));
+    setCartItems(prev => prev.filter(item => item.id !== id));
   };
 
   const updateQuantity = (id: string, quantity: number) => {
@@ -146,8 +163,8 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
       removeFromCart(id);
       return;
     }
-    setCartItems(prevItems =>
-      prevItems.map(item =>
+    setCartItems(prev =>
+      prev.map(item =>
         item.id === id ? { ...item, quantity } : item
       )
     );
@@ -155,12 +172,11 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
 
   const clearCart = () => {
     setCartItems([]);
+    setPromoCode(null);
   };
 
   const getTotalPrice = () => {
-    const subtotal = getSubtotal();
-    const discount = getDiscountAmount();
-    return subtotal - discount;
+    return getSubtotal() - getDiscountAmount();
   };
 
   const isMinimumOrderMet = (): boolean => {
@@ -170,22 +186,26 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   const getMinimumOrderAmount = (): number => {
     return MINIMUM_ORDER_AMOUNT;
   };
+
   return (
-    <CartContext.Provider value={{
-      cartItems,
-      addToCart,
-      removeFromCart,
-      updateQuantity,
-      clearCart,
-      getTotalPrice,
-      getSubtotal,
-      getActivePromotions,
-      getDiscountAmount,
-      isMinimumOrderMet,
-      getMinimumOrderAmount,
-      isCartOpen,
-      setIsCartOpen
-    }}>
+    <CartContext.Provider
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        updateQuantity,
+        clearCart,
+        getTotalPrice,
+        getSubtotal,
+        getActivePromotions,
+        getDiscountAmount,
+        isMinimumOrderMet,
+        getMinimumOrderAmount,
+        isCartOpen,
+        setIsCartOpen,
+        applyPromoCode
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

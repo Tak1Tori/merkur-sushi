@@ -19,7 +19,8 @@ import {
   getrankeItems,
   gunkansItems,
   merkurSpecial,
-  MerkurBoxes
+  MerkurBoxes,
+  VorspeisenItems
 } from './data/menuData';
 import CateringSection from './components/CateringSection';
 
@@ -73,6 +74,7 @@ function AppContent() {
     { name: "Aktionen", sectionId: "aktionen" },
     { name: "Menü Merkur", sectionId: "MerkurBoxes" },
     { name: "Merkur Spezial", sectionId: "mercurSpecial" },
+    { name: "Vorspeisen", sectionId: "Vorspeisen" },
     { name: "Salate/Suppen", sectionId: "salate-suppen" },
     { name: "Nigiri/Onigiri", sectionId: "nigiri-onigiri" },
     { name: "Bowls", sectionId: "bowls" },
@@ -93,9 +95,8 @@ function AppContent() {
 
 
       {/* Content - shift left when cart is open on desktop */}
-      <div className={`relative z-10 transition-all duration-300 ${
-        isCartOpen ? 'md:mr-96' : ''
-      }`}>
+      <div className={`relative z-10 transition-all duration-300 ${isCartOpen ? 'md:mr-96' : ''
+        }`}>
         {/* Header Section with Header Background */}
         <div
           className="relative bg-cover bg-center bg-no-repeat"
@@ -313,6 +314,9 @@ function AppContent() {
             </div>
             <div id="mercurSpecial">
               <MenuSection title="Merkur Spezial" items={merkurSpecial} />
+            </div>
+            <div id="Vorspeisen">
+              <MenuSection title="Vorspeisen" items={VorspeisenItems} />
             </div>
             <div id="salate-suppen">
               <MenuSection title="Salate/Suppen" items={salateSuppenItems} />
