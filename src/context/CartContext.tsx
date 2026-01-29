@@ -103,7 +103,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
       });
     }
 
-    if (promoCode === 'maki') {
+    if (promoCode === 'Nikitos') {
       promotions.push({
         id: 'promo_maki',
         name: 'Promo-Code MAKI',
